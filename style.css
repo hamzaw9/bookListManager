@@ -3,3 +3,27 @@
   margin: 0;
   box-sizing: border-box;
 }
+
+button {
+  cursor: pointer;
+}
+
+.book-container {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+}
+
+.book-container input {
+  width: 40%;
+  padding: 16px 16px 16px 6px;
+  border-radius: 10px;
+}
+
+#add-book {
+  width: 7%;
+  font-size: 18px;
+  border-radius: 9px;
+}
