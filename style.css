@@ -12,8 +12,8 @@ button {
   width: 60%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   gap: 20px;
+  margin: 0 auto;
 }
 
 .book-container input {
@@ -24,6 +24,6 @@ button {
 
 #add-book {
   width: 7%;
-  font-size: 18px;
-  border-radius: 9px;
+  font-size: 20px;
+  border-radius: 4px;
 }
