@@ -20,6 +20,7 @@ button {
   width: 40%;
   padding: 16px 16px 16px 6px;
   border-radius: 10px;
+  font-size: 20px;
 }
 
 #add-book {
