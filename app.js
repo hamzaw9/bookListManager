@@ -8,8 +8,16 @@ document.addEventListener("DOMContentLoaded", () => {
   function addBook() {
     const bookTitleValue = bookTitle.value;
     const authorNameValue = authorName.value;
-    booksCollection.push({ title: bookTitleValue, author: authorNameValue });
-    updateLocalStorage();
+
+    const existingBook = booksCollection.find(
+      (book) => book.title === bookTitleValue && book.author === authorNameValue
+    );
+
+    if (!existingBook) {
+      booksCollection.push({ title: bookTitleValue, author: authorNameValue });
+      updateLocalStorage();
+      displayBooks(booksCollection);
+    }
   }
 
   function updateLocalStorage() {
@@ -20,13 +28,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function displayBooks(booksCollection) {
     const bookList = document.querySelector("#book-list");
+    bookList.innerHTML = "";
     booksCollection.forEach((book) => {
       bookList.innerHTML += `<div class="book"><p>${book["title"]} by ${book["author"]}</p>
       <button id="remove-book" type="button">Remove</button></div>`;
     });
   }
 
-  displayBooks(booksCollection);
-
   addBookBtn.addEventListener("click", addBook);
+  window.addEventListener("load", displayBooks(booksCollection));
 });
