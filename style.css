@@ -42,3 +42,13 @@ button {
   align-items: center;
   margin-bottom: 40px;
 }
+
+.book p {
+  font-size: 25px;
+}
+
+#remove-book {
+  font-size: 20px;
+  border-radius: 7px;
+  padding: 6px 10px;
+}

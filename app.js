@@ -23,7 +23,6 @@ document.addEventListener("DOMContentLoaded", () => {
     booksCollection.forEach((book) => {
       bookList.innerHTML += `<div class="book"><p>${book["title"]} by ${book["author"]}</p>
       <button id="remove-book" type="button">Remove</button></div>`;
-      console.log(`${book["title"]} by ${book["author"]}`);
     });
   }
 
