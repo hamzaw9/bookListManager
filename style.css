@@ -1,0 +1,56 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+button {
+  cursor: pointer;
+}
+
+.book-container {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin: 0 auto;
+}
+
+.book-container input {
+  width: 40%;
+  padding: 16px 16px 16px 6px;
+  border-radius: 10px;
+  font-size: 20px;
+}
+
+#add-book {
+  width: 7%;
+  font-size: 20px;
+  border-radius: 4px;
+}
+
+#book-list {
+  overflow: auto;
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  margin: 0 auto;
+}
+
+.book {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.book p {
+  font-size: 25px;
+}
+
+.remove-book {
+  font-size: 20px;
+  border-radius: 7px;
+  padding: 6px 10px;
+}
