@@ -8,6 +8,10 @@ button {
   cursor: pointer;
 }
 
+h1 {
+  text-align: center;
+}
+
 .book-container {
   width: 60%;
   display: flex;
