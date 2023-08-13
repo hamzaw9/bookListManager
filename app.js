@@ -8,7 +8,8 @@ document.addEventListener("DOMContentLoaded", () => {
   function addBook() {
     const bookTitleValue = bookTitle.value;
     const authorNameValue = authorName.value;
-    if (bookTitleValue == "" && authorNameValue == "") {
+    if (bookTitleValue == "" || authorNameValue == "") {
+      alert("Please enter Book Author and Title");
       return false;
     }
 
