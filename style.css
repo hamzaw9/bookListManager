@@ -30,6 +30,7 @@ button {
 }
 
 #book-list {
+  overflow: auto;
   width: 60%;
   display: flex;
   flex-direction: column;
@@ -41,14 +42,14 @@ button {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 40px;
+  margin-bottom: 25px;
 }
 
 .book p {
   font-size: 25px;
 }
 
-#remove-book {
+.remove-book {
   font-size: 20px;
   border-radius: 7px;
   padding: 6px 10px;
