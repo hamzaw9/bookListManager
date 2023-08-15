@@ -8,25 +8,9 @@ button {
   cursor: pointer;
 }
 
-.book-container {
-  width: 60%;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  margin: 0 auto;
-}
-
-.book-container input {
-  width: 40%;
-  padding: 16px 16px 16px 6px;
-  border-radius: 10px;
-  font-size: 20px;
-}
-
-#add-book {
-  width: 7%;
-  font-size: 20px;
-  border-radius: 4px;
+h1 {
+  text-align: center;
+  padding: 15px 0;
 }
 
 #book-list {
@@ -34,15 +18,21 @@ button {
   width: 60%;
   display: flex;
   flex-direction: column;
-  gap: 30px;
   margin: 0 auto;
+  height: 40vh;
+  border: 4px solid black;
+  border-radius: 11px;
 }
 
 .book {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 25px;
+  padding: 8px;
+}
+
+.book:nth-child(odd) {
+  background-color: #d3d3d3;
 }
 
 .book p {
@@ -53,4 +43,44 @@ button {
   font-size: 20px;
   border-radius: 7px;
   padding: 6px 10px;
+  box-shadow: 0 0 5px 2px rgba(0, 0, 0, 1);
+}
+
+.book-container {
+  width: 60%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  margin: 0 auto;
+  padding: 25px 0 15px 0;
+}
+
+.book-container h2 {
+  font-size: 31px;
+}
+
+.book-container span {
+  width: 10%;
+  height: 5px;
+  background-color: #d3d3d3;
+}
+
+.book-container input {
+  max-width: 100%;
+  width: 40%;
+  padding: 16px 16px 16px 6px;
+  border-radius: 10px;
+  border: 5px solid black;
+  font-size: 20px;
+}
+
+#add-book {
+  position: inherit;
+  left: 16%;
+  font-size: 20px;
+  padding: 4px 12px;
+  border-radius: 4px;
+  box-shadow: 0 0 5px 2px rgba(0, 0, 0, 1);
 }
