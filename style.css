@@ -19,7 +19,7 @@ h1 {
   display: flex;
   flex-direction: column;
   margin: 0 auto;
-  height: 60vh;
+  height: 40vh;
   border: 4px solid black;
   border-radius: 11px;
 }
