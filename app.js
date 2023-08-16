@@ -52,18 +52,18 @@
 
 class BookManager {
   constructor() {
-    this.booksCollection = JSON.parse(localStorage.getItem("Books")) || [];
+    this.booksCollection = JSON.parse(localStorage.getItem('Books')) || [];
   }
 
   updateLocalStorage() {
-    localStorage.setItem("Books", JSON.stringify(this.booksCollection));
-    document.querySelector("#book-title").value = "";
-    document.querySelector("#author-name").value = "";
+    localStorage.setItem('Books', JSON.stringify(this.booksCollection));
+    document.querySelector('#book-title').value = '';
+    document.querySelector('#author-name').value = '';
   }
 
   addBook() {
-    const bookTitleValue = document.querySelector("#book-title").value;
-    const authorNameValue = document.querySelector("#author-name").value;
+    const bookTitleValue = document.querySelector('#book-title').value;
+    const authorNameValue = document.querySelector('#author-name').value;
 
     if (bookTitleValue && authorNameValue) {
       const newBook = { title: bookTitleValue, author: authorNameValue };
@@ -74,8 +74,8 @@ class BookManager {
   }
 
   displayBooks() {
-    const bookListInner = document.querySelector("#book-list-inner");
-    bookListInner.innerHTML = "";
+    const bookListInner = document.querySelector('#book-list-inner');
+    bookListInner.innerHTML = '';
     this.booksCollection.forEach((book, index) => {
       bookListInner.innerHTML += `<div id=${index} class="book"><p>${book.title} by ${book.author}</p>
       <button class="remove-book" type="button">Remove</button></div>`;
@@ -91,57 +91,57 @@ class BookManager {
 
 const bookManager1 = new BookManager();
 
-window.addEventListener("load", () => {
+window.addEventListener('load', () => {
   bookManager1.displayBooks();
 });
 
-const addBookBtn = document.querySelector("#add-book");
-addBookBtn.addEventListener("click", () => {
+const addBookBtn = document.querySelector('#add-book');
+addBookBtn.addEventListener('click', () => {
   bookManager1.addBook();
 });
 
-const bookListInner = document.querySelector("#book-list");
-bookListInner.addEventListener("click", (event) => {
+const bookListInner = document.querySelector('#book-list');
+bookListInner.addEventListener('click', (event) => {
   bookManager1.removeBook(event.target.parentNode.id);
 });
 
-/***** Current Date *****/
+/** *** Current Date **** */
 
 const currentDate = new Date().toDateString();
-const currentDateElement = document.querySelector("#current-date");
+const currentDateElement = document.querySelector('#current-date');
 
 currentDateElement.innerHTML = currentDate;
 
-/***** SPA *****/
+/** *** SPA **** */
 
-const list = document.querySelector("#list");
-const newBook = document.querySelector("#add-new");
-const contactUs = document.querySelector("#contact-us");
+const list = document.querySelector('#list');
+const newBook = document.querySelector('#add-new');
+const contactUs = document.querySelector('#contact-us');
 
-const bookList = document.querySelector("#book-list");
-const addNewBook = document.querySelector("#add-new-book");
-const contact = document.querySelector("#contact");
+const bookList = document.querySelector('#book-list');
+const addNewBook = document.querySelector('#add-new-book');
+const contact = document.querySelector('#contact');
 
 function showBookList() {
-  bookList.style.display = "block";
-  addNewBook.style.display = "none";
-  contact.style.display = "none";
+  bookList.style.display = 'block';
+  addNewBook.style.display = 'none';
+  contact.style.display = 'none';
 }
 
 function showNewBook() {
-  addNewBook.style.display = "block";
-  bookList.style.display = "none";
-  contact.style.display = "none";
+  addNewBook.style.display = 'block';
+  bookList.style.display = 'none';
+  contact.style.display = 'none';
 }
 
 function showContactUs() {
-  contact.style.display = "block";
-  addNewBook.style.display = "none";
-  bookList.style.display = "none";
+  contact.style.display = 'block';
+  addNewBook.style.display = 'none';
+  bookList.style.display = 'none';
 }
 
-list.addEventListener("click", showBookList);
+list.addEventListener('click', showBookList);
 
-newBook.addEventListener("click", showNewBook);
+newBook.addEventListener('click', showNewBook);
 
-contactUs.addEventListener("click", showContactUs);
+contactUs.addEventListener('click', showContactUs);
