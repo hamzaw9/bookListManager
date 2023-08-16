@@ -61,7 +61,7 @@ h1 {
 
 #book-list-inner {
   overflow: auto;
-  width: 60%;
+  width: 90%;
   display: flex;
   flex-direction: column;
   margin: 0 auto;
@@ -129,4 +129,21 @@ h2 {
   padding: 4px 12px;
   border-radius: 4px;
   box-shadow: 0 0 5px 2px rgba(0, 0, 0, 1);
+}
+
+#contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  margin: 10px;
+}
+
+#contact p,
+#contact li {
+  font-size: 30px;
+}
+
+#contact li {
+  list-style-type: disc;
 }
