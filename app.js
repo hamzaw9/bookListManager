@@ -74,10 +74,10 @@ class BookManager {
   }
 
   displayBooks() {
-    const bookList = document.querySelector('#book-list');
-    bookList.innerHTML = '';
+    const bookListInner = document.querySelector('#book-list-inner');
+    bookListInner.innerHTML = '';
     this.booksCollection.forEach((book, index) => {
-      bookList.innerHTML += `<div id=${index} class="book"><p>${book.title} by ${book.author}</p>
+      bookListInner.innerHTML += `<div id=${index} class="book"><p>${book.title} by ${book.author}</p>
       <button class="remove-book" type="button">Remove</button></div>`;
     });
   }
@@ -100,7 +100,48 @@ addBookBtn.addEventListener('click', () => {
   bookManager1.addBook();
 });
 
-const bookList = document.querySelector('#book-list');
-bookList.addEventListener('click', (event) => {
+const bookListInner = document.querySelector('#book-list');
+bookListInner.addEventListener('click', (event) => {
   bookManager1.removeBook(event.target.parentNode.id);
 });
+
+/** *** Current Date **** */
+
+const currentDate = new Date().toDateString();
+const currentDateElement = document.querySelector('#current-date');
+
+currentDateElement.innerHTML = currentDate;
+
+/** *** SPA **** */
+
+const list = document.querySelector('#list');
+const newBook = document.querySelector('#add-new');
+const contactUs = document.querySelector('#contact-us');
+
+const bookList = document.querySelector('#book-list');
+const addNewBook = document.querySelector('#add-new-book');
+const contact = document.querySelector('#contact');
+
+function showBookList() {
+  bookList.style.display = 'block';
+  addNewBook.style.display = 'none';
+  contact.style.display = 'none';
+}
+
+function showNewBook() {
+  addNewBook.style.display = 'block';
+  bookList.style.display = 'none';
+  contact.style.display = 'none';
+}
+
+function showContactUs() {
+  contact.style.display = 'block';
+  addNewBook.style.display = 'none';
+  bookList.style.display = 'none';
+}
+
+list.addEventListener('click', showBookList);
+
+newBook.addEventListener('click', showNewBook);
+
+contactUs.addEventListener('click', showContactUs);

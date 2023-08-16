@@ -8,18 +8,78 @@ button {
   cursor: pointer;
 }
 
+li {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+#book-list,
+#add-new-book,
+#contact {
+  display: none;
+}
+
+/*****  Header  *****/
+
+header {
+  margin: 10px 10px 24px 10px;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 3px solid black;
+  border-radius: 6px;
+  padding: 5px 12px;
+}
+
+nav a {
+  color: black;
+  font-size: 24px;
+}
+
+.nav-links {
+  display: flex;
+}
+
+.nav-links li {
+  border-right: 2px solid black;
+  padding: 1px 20px;
+}
+
+.nav-links li:last-child {
+  border: none;
+}
+
+#current-date {
+  float: right;
+  padding-top: 12px;
+  font-size: 19px;
+}
+
+/*****  book list  *****/
+
+main {
+  height: 76vh;
+}
+
 h1 {
   text-align: center;
   padding: 15px 0;
+  font-size: 35px;
 }
 
-#book-list {
+#book-list-inner {
   overflow: auto;
-  width: 60%;
+  width: 90%;
   display: flex;
   flex-direction: column;
   margin: 0 auto;
-  height: 40vh;
+  height: 60vh;
   border: 4px solid black;
   border-radius: 11px;
 }
@@ -46,28 +106,31 @@ h1 {
   box-shadow: 0 0 5px 2px rgba(0, 0, 0, 1);
 }
 
-.book-container {
+/*****  Add new book  *****/
+
+.add-new-book-inner {
   width: 60%;
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 20px;
+  gap: 40px;
   margin: 0 auto;
   padding: 25px 0 15px 0;
 }
 
-.book-container h2 {
-  font-size: 31px;
+h2 {
+  font-size: 35px;
+  margin: 17px 0 17px 0;
 }
 
-.book-container span {
+.add-new-book-inner span {
   width: 10%;
   height: 5px;
   background-color: #d3d3d3;
 }
 
-.book-container input {
+.add-new-book-inner input {
   max-width: 100%;
   width: 40%;
   padding: 16px 16px 16px 6px;
@@ -83,4 +146,38 @@ h1 {
   padding: 4px 12px;
   border-radius: 4px;
   box-shadow: 0 0 5px 2px rgba(0, 0, 0, 1);
+}
+
+/*****  Contact  *****/
+
+.contact-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  margin: 15px;
+  height: 70vh;
+}
+
+.contact-inner p,
+.contact-inner li {
+  font-size: 30px;
+}
+
+.contact-inner li {
+  list-style-type: disc;
+}
+
+/*****  Footer  *****/
+
+footer {
+  border: 3px solid black;
+  border-radius: 6px;
+  margin: 24px 10px 10px 10px;
+  padding: 5px 12px;
+}
+
+footer span {
+  font-size: 25px;
+  color: black;
 }
