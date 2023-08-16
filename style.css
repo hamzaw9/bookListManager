@@ -23,6 +23,30 @@ header {
   padding: 5px 12px;
 }
 
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav a {
+  color: black;
+  font-size: 24px;
+}
+
+.nav-links {
+  display: flex;
+}
+
+.nav-links li {
+  border-right: 2px solid black;
+  padding: 1px 20px;
+}
+
+.nav-links li:last-child {
+  border: none;
+}
+
 h1 {
   text-align: center;
   padding: 15px 0;
