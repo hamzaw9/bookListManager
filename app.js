@@ -52,18 +52,18 @@
 
 class BookManager {
   constructor() {
-    this.booksCollection = JSON.parse(localStorage.getItem('Books')) || [];
+    this.booksCollection = JSON.parse(localStorage.getItem("Books")) || [];
   }
 
   updateLocalStorage() {
-    localStorage.setItem('Books', JSON.stringify(this.booksCollection));
-    document.querySelector('#book-title').value = '';
-    document.querySelector('#author-name').value = '';
+    localStorage.setItem("Books", JSON.stringify(this.booksCollection));
+    document.querySelector("#book-title").value = "";
+    document.querySelector("#author-name").value = "";
   }
 
   addBook() {
-    const bookTitleValue = document.querySelector('#book-title').value;
-    const authorNameValue = document.querySelector('#author-name').value;
+    const bookTitleValue = document.querySelector("#book-title").value;
+    const authorNameValue = document.querySelector("#author-name").value;
 
     if (bookTitleValue && authorNameValue) {
       const newBook = { title: bookTitleValue, author: authorNameValue };
@@ -74,8 +74,8 @@ class BookManager {
   }
 
   displayBooks() {
-    const bookList = document.querySelector('#book-list');
-    bookList.innerHTML = '';
+    const bookList = document.querySelector("#book-list");
+    bookList.innerHTML = "";
     this.booksCollection.forEach((book, index) => {
       bookList.innerHTML += `<div id=${index} class="book"><p>${book.title} by ${book.author}</p>
       <button class="remove-book" type="button">Remove</button></div>`;
@@ -91,16 +91,23 @@ class BookManager {
 
 const bookManager1 = new BookManager();
 
-window.addEventListener('load', () => {
+window.addEventListener("load", () => {
   bookManager1.displayBooks();
 });
 
-const addBookBtn = document.querySelector('#add-book');
-addBookBtn.addEventListener('click', () => {
+const addBookBtn = document.querySelector("#add-book");
+addBookBtn.addEventListener("click", () => {
   bookManager1.addBook();
 });
 
-const bookList = document.querySelector('#book-list');
-bookList.addEventListener('click', (event) => {
+const bookList = document.querySelector("#book-list");
+bookList.addEventListener("click", (event) => {
   bookManager1.removeBook(event.target.parentNode.id);
 });
+
+/***** Current Date *****/
+
+const currentDate = new Date().toDateString();
+const currentDateElement = document.querySelector("#current-date");
+
+currentDateElement.innerHTML = currentDate;

@@ -17,16 +17,16 @@ a {
 }
 
 header {
-  border: 3px solid black;
-  border-radius: 6px;
-  margin: 10px;
-  padding: 5px 12px;
+  margin: 10px 10px 0 10px;
 }
 
 nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  border: 3px solid black;
+  border-radius: 6px;
+  padding: 5px 12px;
 }
 
 nav a {
@@ -45,6 +45,11 @@ nav a {
 
 .nav-links li:last-child {
   border: none;
+}
+
+#current-date {
+  float: right;
+  padding: 12px;
 }
 
 h1 {
