@@ -74,10 +74,10 @@ class BookManager {
   }
 
   displayBooks() {
-    const bookList = document.querySelector("#book-list");
-    bookList.innerHTML = "";
+    const bookListInner = document.querySelector("#book-list-inner");
+    bookListInner.innerHTML = "";
     this.booksCollection.forEach((book, index) => {
-      bookList.innerHTML += `<div id=${index} class="book"><p>${book.title} by ${book.author}</p>
+      bookListInner.innerHTML += `<div id=${index} class="book"><p>${book.title} by ${book.author}</p>
       <button class="remove-book" type="button">Remove</button></div>`;
     });
   }
@@ -100,8 +100,8 @@ addBookBtn.addEventListener("click", () => {
   bookManager1.addBook();
 });
 
-const bookList = document.querySelector("#book-list");
-bookList.addEventListener("click", (event) => {
+const bookListInner = document.querySelector("#book-list");
+bookListInner.addEventListener("click", (event) => {
   bookManager1.removeBook(event.target.parentNode.id);
 });
 

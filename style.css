@@ -17,7 +17,7 @@ a {
 }
 
 header {
-  margin: 10px 10px 0 10px;
+  margin: 10px 10px 24px 10px;
 }
 
 nav {
@@ -49,15 +49,17 @@ nav a {
 
 #current-date {
   float: right;
-  padding: 12px;
+  padding-top: 12px;
+  font-size: 19px;
 }
 
 h1 {
   text-align: center;
   padding: 15px 0;
+  font-size: 35px;
 }
 
-#book-list {
+#book-list-inner {
   overflow: auto;
   width: 60%;
   display: flex;
@@ -90,7 +92,7 @@ h1 {
   box-shadow: 0 0 5px 2px rgba(0, 0, 0, 1);
 }
 
-.book-container {
+#add-new-book {
   width: 60%;
   position: relative;
   display: flex;
@@ -101,17 +103,17 @@ h1 {
   padding: 25px 0 15px 0;
 }
 
-.book-container h2 {
-  font-size: 31px;
+h2 {
+  font-size: 35px;
 }
 
-.book-container span {
+#add-new-book span {
   width: 10%;
   height: 5px;
   background-color: #d3d3d3;
 }
 
-.book-container input {
+#add-new-book input {
   max-width: 100%;
   width: 40%;
   padding: 16px 16px 16px 6px;

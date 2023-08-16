@@ -18,17 +18,33 @@
       </nav>
       <span id="current-date"></span>
     </header>
-    <h1>All awesome books</h1>
 
-    <section id="book-list"></section>
+    <main>
+      <section id="book-list">
+        <h1>All awesome books</h1>
+        <div id="book-list-inner"></div>
+      </section>
 
-    <section class="book-container">
-      <span></span>
-      <h2>Add new Book</h2>
-      <input type="text" id="book-title" placeholder="Enter Book Title" />
-      <input type="text" id="author-name" placeholder="Enter Author Name" />
-      <button id="add-book" type="button">Add</button>
-    </section>
+      <section id="add-new-book">
+        <h2>Add new Book</h2>
+        <input type="text" id="book-title" placeholder="Enter Book Title" />
+        <input type="text" id="author-name" placeholder="Enter Author Name" />
+        <button id="add-book" type="button">Add</button>
+      </section>
+
+      <section id="contact">
+        <h2>Contact information</h2>
+        <div class="contact-description">
+          <p>Do you have any questions or you just want to say "Hello"?</p>
+          <p>You can reach out to us</p>
+        </div>
+        <ul>
+          <li>Our e-mail: mail@mail.com</li>
+          <li>Our phone: number 00123456789</li>
+          <li>Our address: Street 32, 54987 City, Country</li>
+        </ul>
+      </section>
+    </main>
     <script src="app.js"></script>
   </body>
 </html>
