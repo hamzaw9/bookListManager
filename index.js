@@ -50,104 +50,20 @@
   bookList.addEventListener("click", removeBook);
 }); */
 
-class BookManager {
-  constructor() {
-    this.booksCollection = JSON.parse(localStorage.getItem("Books")) || [];
-  }
-
-  updateLocalStorage() {
-    localStorage.setItem("Books", JSON.stringify(this.booksCollection));
-    document.querySelector("#book-title").value = "";
-    document.querySelector("#author-name").value = "";
-  }
-
-  addBook() {
-    const bookTitleValue = document.querySelector("#book-title").value;
-    const authorNameValue = document.querySelector("#author-name").value;
-
-    if (bookTitleValue && authorNameValue) {
-      const newBook = { title: bookTitleValue, author: authorNameValue };
-      this.booksCollection.push(newBook);
-      this.updateLocalStorage();
-      this.displayBooks();
-    }
-  }
-
-  displayBooks() {
-    const bookListInner = document.querySelector("#book-list-inner");
-    bookListInner.innerHTML = "";
-    this.booksCollection.forEach((book, index) => {
-      bookListInner.innerHTML += `<div id=${index} class="book"><p>${book.title} by ${book.author}</p>
-      <button class="remove-book" type="button">Remove</button></div>`;
-    });
-  }
-
-  removeBook(id) {
-    this.booksCollection.splice(id, 1);
-    this.updateLocalStorage();
-    this.displayBooks();
-  }
-}
+import BookManager from "./modules/bookManager.js";
+import {
+  showBookList,
+  showNewBook,
+  showContactUs,
+} from "./modules/navLinkClick.js";
 
 const bookManager1 = new BookManager();
 
-window.addEventListener("load", () => {
-  bookManager1.displayBooks();
-});
-
-const addBookBtn = document.querySelector("#add-book");
-addBookBtn.addEventListener("click", () => {
-  bookManager1.addBook();
-});
-
-const bookListInner = document.querySelector("#book-list");
-bookListInner.addEventListener("click", (event) => {
-  bookManager1.removeBook(event.target.parentNode.id);
-});
-
-/** *** Current Date **** */
+showBookList();
+showNewBook();
+showContactUs();
 
 const currentDate = new Date().toDateString();
 const currentDateElement = document.querySelector("#current-date");
 
 currentDateElement.innerHTML = currentDate;
-
-/** *** SPA **** */
-
-const list = document.querySelector("#list");
-const newBook = document.querySelector("#add-new");
-const contactUs = document.querySelector("#contact-us");
-
-const bookList = document.querySelector("#book-list");
-const addNewBook = document.querySelector("#add-new-book");
-const contact = document.querySelector("#contact");
-
-const showBookList = () => {
-  bookList.style.display = "block";
-  addNewBook.style.display = "none";
-  contact.style.display = "none";
-};
-
-const showNewBook = () => {
-  addNewBook.style.display = "block";
-  bookList.style.display = "none";
-  contact.style.display = "none";
-};
-
-const showContactUs = () => {
-  contact.style.display = "block";
-  addNewBook.style.display = "none";
-  bookList.style.display = "none";
-};
-
-list.addEventListener("click", () => {
-  showBookList();
-});
-
-newBook.addEventListener("click", () => {
-  showNewBook();
-});
-
-contactUs.addEventListener("click", () => {
-  showContactUs();
-});
