@@ -19,6 +19,8 @@ export default class BookManager {
       this.booksCollection.push(newBook);
       this.updateLocalStorage();
       this.displayBooks();
+    } else {
+      alert('Please enter Book Title and Author Name');
     }
   };
 
