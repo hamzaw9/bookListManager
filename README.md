@@ -61,7 +61,7 @@ It's a project to manage books. Users can add/remove books in local storage and 
 
 ## 🚀 Live Demo <a name="live-demo"></a> 
  
-- [Live Demo Link](https://hamzaw9.github.io/bookListManager//)
+- [Live Demo Link]()
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
