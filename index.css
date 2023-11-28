@@ -195,4 +195,8 @@ footer span {
   nav {
     padding: 5px;
   }
+
+  nav a {
+    font-size: 18px;
+  }
 }
