@@ -4,6 +4,13 @@
   box-sizing: border-box;
 }
 
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+}
+
 button {
   cursor: pointer;
 }
@@ -24,7 +31,7 @@ a {
 /*****  Header  *****/
 
 header {
-  margin: 10px 10px 24px 10px;
+  margin: 10px 10px 24px;
 }
 
 nav {
@@ -52,6 +59,7 @@ nav a {
 
 .nav-links li:last-child {
   border: none;
+  padding-right: 0;
 }
 
 #current-date {
@@ -61,10 +69,6 @@ nav a {
 }
 
 /*****  book list  *****/
-
-main {
-  height: 76vh;
-}
 
 h1 {
   text-align: center;
@@ -102,25 +106,24 @@ h1 {
   font-size: 20px;
   border-radius: 7px;
   padding: 6px 10px;
-  box-shadow: 0 0 5px 2px rgba(0, 0, 0, 1);
+  box-shadow: 0 0 5px 2px rgb(0 0 0 / 100%);
 }
 
 /*****  Add new book  *****/
 
 .add-new-book-inner {
   width: 60%;
-  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 40px;
   margin: 0 auto;
-  padding: 25px 0 15px 0;
+  padding: 25px 0 15px;
 }
 
 h2 {
   font-size: 35px;
-  margin: 17px 0 17px 0;
+  margin: 17px 0;
 }
 
 .add-new-book-inner span {
@@ -130,8 +133,7 @@ h2 {
 }
 
 .add-new-book-inner input {
-  max-width: 100%;
-  width: 40%;
+  width: 50%;
   padding: 16px 16px 16px 6px;
   border-radius: 10px;
   border: 5px solid black;
@@ -139,12 +141,10 @@ h2 {
 }
 
 #add-book {
-  position: inherit;
-  left: 16%;
   font-size: 20px;
   padding: 4px 12px;
   border-radius: 4px;
-  box-shadow: 0 0 5px 2px rgba(0, 0, 0, 1);
+  box-shadow: 0 0 5px 2px rgb(0 0 0 / 100%);
 }
 
 /*****  Contact  *****/
@@ -172,11 +172,31 @@ h2 {
 footer {
   border: 3px solid black;
   border-radius: 6px;
-  margin: 24px 10px 10px 10px;
+  margin: 24px 10px 10px;
   padding: 5px 12px;
 }
 
 footer span {
   font-size: 25px;
   color: black;
+}
+
+@media (width <= 900px) {
+  .add-new-book-inner input {
+    width: 70%;
+  }
+}
+
+@media (width <= 600px) {
+  .add-new-book-inner input {
+    width: 85%;
+  }
+
+  nav {
+    padding: 5px;
+  }
+
+  nav a {
+    font-size: 18px;
+  }
 }
