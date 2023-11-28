@@ -59,6 +59,7 @@ nav a {
 
 .nav-links li:last-child {
   border: none;
+  padding-right: 0;
 }
 
 #current-date {
@@ -189,5 +190,9 @@ footer span {
 @media (max-width: 600px) {
   .add-new-book-inner input {
     width: 85%;
+  }
+
+  nav {
+    padding: 5px;
   }
 }
