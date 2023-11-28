@@ -132,8 +132,7 @@ h2 {
 }
 
 .add-new-book-inner input {
-  max-width: 100%;
-  width: 40%;
+  width: 50%;
   padding: 16px 16px 16px 6px;
   border-radius: 10px;
   border: 5px solid black;
@@ -179,4 +178,16 @@ footer {
 footer span {
   font-size: 25px;
   color: black;
+}
+
+@media (max-width: 900px) {
+  .add-new-book-inner input {
+    width: 70%;
+  }
+}
+
+@media (max-width: 600px) {
+  .add-new-book-inner input {
+    width: 85%;
+  }
 }
