@@ -10,12 +10,22 @@ export default class BookManager {
     document.querySelector('#author-name').value = '';
   };
 
-  addBook = () => {
-    const bookTitleValue = document.querySelector('#book-title').value;
-    const authorNameValue = document.querySelector('#author-name').value;
+  showErrorMessage = () => {
+    const errorMsg = document.querySelector('.error-msg');
+    errorMsg.style.display = 'block';
+  };
 
-    if (bookTitleValue && authorNameValue) {
-      const newBook = { title: bookTitleValue, author: authorNameValue };
+  hideErrorMessage = () => {
+    const errorMsg = document.querySelector('.error-msg');
+    errorMsg.style.display = 'none';
+  };
+
+  addBook = () => {
+    const bookTitle = document.querySelector('#book-title');
+    const authorName = document.querySelector('#author-name');
+
+    if (bookTitle.value && authorName.value) {
+      const newBook = { title: bookTitle.value, author: authorName.value };
       this.booksCollection.push(newBook);
       this.updateLocalStorage();
       this.displayBooks();
