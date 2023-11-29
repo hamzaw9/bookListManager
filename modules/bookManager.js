@@ -24,11 +24,16 @@ export default class BookManager {
     const bookTitle = document.querySelector('#book-title');
     const authorName = document.querySelector('#author-name');
 
+    bookTitle.addEventListener('focus', this.hideErrorMessage);
+    authorName.addEventListener('focus', this.hideErrorMessage);
+
     if (bookTitle.value && authorName.value) {
       const newBook = { title: bookTitle.value, author: authorName.value };
       this.booksCollection.push(newBook);
       this.updateLocalStorage();
       this.displayBooks();
+    } else {
+      this.showErrorMessage();
     }
   };
 
