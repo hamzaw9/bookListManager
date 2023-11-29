@@ -116,20 +116,14 @@ h1 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 40px;
+  gap: 30px;
   margin: 0 auto;
   padding: 25px 0 15px;
 }
 
 h2 {
   font-size: 35px;
-  margin: 17px 0;
-}
-
-.add-new-book-inner span {
-  width: 10%;
-  height: 5px;
-  background-color: #d3d3d3;
+  margin-top: 17px;
 }
 
 .add-new-book-inner input {
@@ -145,6 +139,18 @@ h2 {
   padding: 4px 12px;
   border-radius: 4px;
   box-shadow: 0 0 5px 2px rgb(0 0 0 / 100%);
+}
+
+.error-msg {
+  display: none;
+  margin: 0 auto;
+  width: max-content;
+  font-weight: 600;
+  color: #d8000c;
+  background-color: #ffbaba;
+  border-radius: 8px;
+  border: 1px solid;
+  padding: 10px;
 }
 
 /*****  Contact  *****/
